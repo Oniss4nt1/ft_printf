@@ -1,0 +1,17 @@
+#Testers
+42-printf
+
+#Prequisites
+*.d
+
+#Object files
+*.o
+*.obj
+
+#Libraries
+*.a
+*.lib
+
+#Executable files
+*.out
+*.exe

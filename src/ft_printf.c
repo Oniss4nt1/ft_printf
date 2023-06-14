@@ -6,7 +6,7 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:30:09 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/12 17:59:06 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/14 16:28:50 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,23 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int	check_uppercase(char format)
+{
+	if (format == 'X')
+		return (1);
+	return (0);
+}
+
 int	convert_specifiers(const char *format, va_list args)
 {
 	int	index;
+	int uppercase;
 
 	index = 0;
 	if (*format == '%')
 	{
 		format++;
+		uppercase = check_uppercase(*format);
 		if (*format == 'c')
 			index += print_char(va_arg(args, int));
 		else if (*format == 's')
@@ -34,7 +43,7 @@ int	convert_specifiers(const char *format, va_list args)
 		else if (*format == 'd' || *format == 'i')
 			index += print_int(va_arg(args, int));
 		else if (*format == 'x' || *format == 'X')
-			index += print_base(va_arg(args, int), 16);
+			index += print_hex_d(va_arg(args, int), uppercase);
 		else if (*format == '%')
 			index += print_percent();
 	}

@@ -36,7 +36,11 @@ int	print_unsign_int(unsigned int arg);
 
 //####################### Utils #######################
 
+int putnbr_ptr(unsigned long int value, int base);
+int putnbr_int(unsigned int value, int base);
+int print_hex_d(unsigned int arg, int uppercase);
 void	ft_putchar(char c);
-void	ft_putnbr_base(long int n, int base);
+void	ft_putchar_int(char c);
+void	ft_putchar_hex(char c);
 
 #endif

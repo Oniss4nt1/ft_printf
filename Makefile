@@ -13,10 +13,10 @@ NAME = libftprintf.a
 
 # --------------------------- MANDATORY --------------------------- #
 
-SRCS =	ft_printf.c print_base.c print_char.c print_int.c print_percent.c \
+SRCS =	ft_printf.c print_hex_d.c print_char.c print_int.c print_percent.c \
 		print_pointer.c print_string.c print_unsign_int.c
 
-OBJS-MANDATORY = $(addprefix srcs/, $(SRCS:.c=.o))
+OBJS-MANDATORY = $(addprefix src/, $(SRCS:.c=.o))
 
 # ----------------------------- BONUS ----------------------------- #
 
@@ -24,7 +24,7 @@ OBJS-MANDATORY = $(addprefix srcs/, $(SRCS:.c=.o))
 
 # -------------------------- COMPILATION -------------------------- #
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 HEADER = ft_print.h
 
 # --------------------------- RULES --------------------------- #

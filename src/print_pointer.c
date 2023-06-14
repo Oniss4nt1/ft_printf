@@ -8,20 +8,28 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	putnbr_ptr(unsigned long int num, int base)
+int putnbr_ptr(unsigned long int arg, int base)
 {
-	int	length;
+	int length;
 
 	length = 0;
-	if (num >= (unsigned long int)base)
-		length += putnbr_ptr((num / base), base);
-	if (num % base < 10)
-		ft_putchar(num % base + '0');
+	if (arg < 0)
+	{
+		length += write(1, "-", 1);
+		arg = (unsigned long int)(arg * -1);
+	}
 	else
-		ft_putchar(num % base + 'a' - 10);
+		arg = (unsigned long int)arg;
+	if (arg >= (unsigned long int)base)
+		length += putnbr_ptr((arg / base), base);
+	if (arg % base < 10)
+		ft_putchar(arg % base + '0');
+	else
+		ft_putchar(arg % base + 'a' - 10);
 	length++;
 	return (length);
 }
+
 
 int	print_pointer(void *arg, int base)
 {
@@ -30,7 +38,7 @@ int	print_pointer(void *arg, int base)
 	index = 0;
 	if (!arg)
 	{
-		index += write(1, "0x0", 3);
+		index += write(1, "(nil)", 5);
 		return (index);
 	}
 	index += write(1, "0x", 2);

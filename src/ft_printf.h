@@ -6,7 +6,7 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:25:42 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/20 15:22:21 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/20 19:10:32 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+
+/*
+** Struct that contains the flags that can be used in the ft_printf function.
+** The flags are: hashtag, plus and space. They are used to print the
+** corresponding character before the specifier.
+*/
 
 typedef struct s_flags
 {

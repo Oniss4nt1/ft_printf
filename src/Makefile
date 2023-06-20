@@ -16,20 +16,12 @@ SRCS 	=		ft_printf.c print_hex_d.c print_char.c \
 				print_int.c print_percent.c print_pointer.c \
 				print_string.c print_unsign_int.c ft_printf_utils.c \
 
-OBJS-SRC = 	$(addprefix src/, $(SRCS:.c=.o))
-
-############################## BONUS ################################
-
-# SRCS-BONUS 	= 	ft_printf_bonus.c print_hex_d_bonus.c print_char_bonus.c \
-# 				print_int_bonus.c print_percent_bonus.c print_pointer_bonus.c \
-# 				print_string_bonus.c print_unsign_int_bonus.c
-
-# OBJS-BONUS 	= 	$(addprefix bonus/, $(SRCS-BONUS:.c=.o))
+OBJS-SRC = 	$(addprefix ./, $(SRCS:.c=.o))
 
 ############################## FLAGS ################################
 
 FLAGS 		= 	-Wall -Wextra -Werror
-HEADER 		= 	ft_print.h
+HEADER 		= 	ft_printf.h
 
 ############################## RULES ################################
 
@@ -50,7 +42,7 @@ bonus: all
 
 norm:
 	@echo "$(BLUE)Checking Norminette...$(RESET)"
-	@norminette $(SRCS:%=src/%)
+	@norminette $(SRCS:%=./%) $(HEADER)
 	@echo "$(BLUE)Norminette done $(RESET)"
 
 clean:

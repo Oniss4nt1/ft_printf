@@ -6,12 +6,11 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:30:09 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/20 16:09:02 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:50:43 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	convert_specifiers(const char *format, va_list args, int index)
 {
@@ -67,10 +66,3 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (index);
 }
-
-// int main(void)
-// {
-// 	ft_printf("%%\n");
-// 	printf("%%\n");
-// 	return (0);
-// }

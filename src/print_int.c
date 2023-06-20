@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_int.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/20 11:17:28 by brunrodr          #+#    #+#             */
+/*   Updated: 2023/06/20 13:35:35 by brunrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	putnbr_int(int arg, int base)
@@ -27,6 +39,8 @@ int	print_int(int arg, t_flags flags)
 	length = 0;
 	if (flags.plus == 1 && arg >= 0)
 		length += write(1, "+", 1);
+	else if (flags.space == 1 && arg >= 0)
+		length += write(1, " ", 1);
 	length += putnbr_int(arg, 10);
 	return (length);
 }

@@ -45,9 +45,7 @@ mandatory: $(OBJS-SRC)
 	@ranlib $(NAME)
 	@echo "$(GREEN)Mandatory from $(NAME) created $(RESET)"
 
-bonus: $(OBJS-SRC)
-	@ar rc $(NAME) $(OBJS-SRC)
-	@ranlib $(NAME)
+bonus: all
 	@echo "$(GREEN)Bonus from $(NAME) created $(RESET)"
 
 norm:

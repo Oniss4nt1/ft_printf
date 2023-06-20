@@ -6,22 +6,24 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:30:09 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/15 19:09:20 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:09:02 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	convert_specifiers(const char *format, va_list args, int index)
 {
-	int		uppercase;
+	int		upper;
 	t_flags	flags;
 
-	flags = (t_flags){0, 0};
+	flags = (t_flags){0, 0, 0};
 	index = 0;
 	if (*format++ == '%')
 	{
 		active_flags(&format, &flags);
-		uppercase = check_uppercase(*format);
+		upper = check_uppercase(*format);
 		if (*format == 'c')
 			index += print_char(va_arg(args, int));
 		else if (*format == 's')
@@ -33,8 +35,7 @@ int	convert_specifiers(const char *format, va_list args, int index)
 		else if (*format == 'd' || *format == 'i')
 			index += print_int(va_arg(args, int), flags);
 		else if (*format == 'x' || *format == 'X')
-			index += print_hex_d(va_arg(args, unsigned long int), uppercase,
-					flags);
+			index += print_hex_d(va_arg(args, unsigned long int), upper, flags);
 		else if (*format == '%')
 			index += print_percent();
 	}
@@ -69,14 +70,7 @@ int	ft_printf(const char *str, ...)
 
 // int main(void)
 // {
-//     int expected = printf("%#x\n", 0);
-//     int result = ft_printf("%#x", 0);
-
-//     if (expected != result)
-//     {
-//         printf("\nStrings differ:\n");
-//         printf("Expected: %d\n", expected);
-// 		printf("Result: %d\n", result);
-//     }
+// 	ft_printf("%%\n");
+// 	printf("%%\n");
 // 	return (0);
 // }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/20 11:08:53 by brunrodr          #+#    #+#             */
+/*   Updated: 2023/06/20 13:40:46 by brunrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_putchar(char c)
@@ -37,6 +49,8 @@ void	active_flags(const char **format, t_flags *flags)
 			flags->hashtag = 1;
 		else if (flag == '+')
 			flags->plus = 1;
+		else if (flag == ' ')
+			flags->space = 1;
 		(*format)++;
 	}
 }

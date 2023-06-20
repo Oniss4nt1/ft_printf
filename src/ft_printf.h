@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/20 11:25:42 by brunrodr          #+#    #+#             */
+/*   Updated: 2023/06/20 15:22:21 by brunrodr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -8,6 +20,7 @@ typedef struct s_flags
 {
 	unsigned int	hashtag;
 	unsigned int	plus;
+	unsigned int	space;
 }					t_flags;
 
 //####################### ft_printf ########################

@@ -2,42 +2,37 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdlib.h>
 # include <unistd.h>
-
 
 typedef struct s_flags
 {
-	// unsigned int	minus : 0;
-	// unsigned int	plus : 0;
-	// unsigned int	zero : 0;
-	// unsigned int	space : 0;
 	unsigned int	hashtag;
-}	t_flags;
+	unsigned int	plus;
+}					t_flags;
 
+//####################### ft_printf ########################
 
-
-//####################### Main #######################
-
-int	ft_printf(const char *str, ...);
+int					ft_printf(const char *str, ...);
 
 //####################### Specifiers #######################
 
-int	print_base(int arg, int base);
-int	print_char(int arg);
-int	print_int(int arg);
-int print_percent(void);
-int print_pointer(void *arg, int base);
-int	print_string(char *arg);
-int	print_unsign_int(unsigned int arg);
-int print_hex_d(unsigned int arg, int uppercase, t_flags flags);
+int					print_base(int arg, int base);
+int					print_char(int arg);
+int					print_int(int arg, t_flags flags);
+int					print_percent(void);
+int					print_pointer(unsigned long int arg, int base);
+int					print_string(char *arg);
+int					print_unsign_int(unsigned int arg);
+int					print_hex_d(unsigned int arg, int uppercase, t_flags flags);
 
 //####################### Utils #######################
 
-int putnbr_ptr(unsigned long int value, int base);
-int putnbr_int(unsigned int value, int base);
-void	ft_putchar(char c);
-void	ft_putchar_int(char c);
-void	ft_putchar_hex(char c);
+int					putnbr_ptr(unsigned long int value, int base);
+int					putnbr_hex(unsigned int value, int base, int uppercase);
+int					putnbr_int(int value, int base);
+void				ft_putchar(char c);
+int					get_specifier_length(const char *format);
+int					check_uppercase(const char format);
+void				active_flags(const char **format, t_flags *flags);
 
 #endif

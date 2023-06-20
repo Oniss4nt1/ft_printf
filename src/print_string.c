@@ -5,15 +5,15 @@
 
 int	print_string(char *arg)
 {
-	int	index;
+	int	length;
 
-	index = 0;
+	length = 0;
 	if (!arg)
 		arg = "(null)";
 	while (*arg)
 	{
-		index += write(1, arg, 1);
+		length += write(1, arg, 1);
 		arg++;
 	}
-	return (index);
+	return (length);
 }

@@ -8,13 +8,13 @@ RESET 			= \033[0m
 
 
 ############################# Project files ################################
-SRC 			= ../src/ft_printf.c ../src/print_hex_d.c ../src/print_char.c ../src/print_int.c \
+SRC 			= ../src/ft_printf.c ../src/ft_printf_utils.c ../src/print_hex_d.c ../src/print_char.c ../src/print_int.c \
 				../src/print_percent.c ../src/print_pointer.c ../src/print_string.c ../src/print_unsign_int.c
 
 HEADER_PROJECT 	= ../src/ft_printf.h
 
 ############################# Test files ###################################
-TESTS 			= test_int.c test_pointer.c test_string.c
+TESTS 			= test_int.c test_pointer.c test_string.c test_space.c test_upperhex.c
 PROGRAM_TEST 	= $(patsubst %.c, %, $(TESTS))
 HEADER_MINUNIT 	= ../minunit.h
 

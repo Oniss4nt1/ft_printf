@@ -58,27 +58,44 @@ MU_TEST(test_string_format_is_hello)
 
 }
 
-// MU_TEST(testing_three_different_strings)
-// {
-// 	puts("-------------------------------");
-// 	char str1[10] = " ";
-// 	char str2[10] = "-";
-// 	char str3[10] = "hello";
+MU_TEST(test_string_with_flagspace_and_1)
+{
+    //Header
+    puts("\n");
+	puts("-------------------------------");
+	puts("#4 TESTING STRING WITH SPACE AND 1");
+    puts("-------------------------------");
+	puts("\n");
 
-// 	int expected = ft_printf("%s %s %s", str1, str2, str3);
-// 	int result = printf("%s %s %s", str1, str2, str3);
 
-// 	mu_assert_string_eq(&expected, &result);
-// 	puts("\n");
-// 	puts("\n");
-// }
+    //Body
+    char str[10] = "hello";
+    char expected = ft_printf("% 1s", str);
+    char result = printf("% 1s", str);
+
+    if (expected != result) 
+    {
+        printf("\nStrings differ:\n");
+        printf("Expected: % 1s\n", str);
+        ft_printf("Result: % 1s\n", str);
+    }
+    mu_assert(expected == result, "error, strings differ");
+
+    //Footer
+    puts("\n");
+    puts("-------------------------------");
+    puts("#4 TEST STRING WITH SPACE AND 1 ENDED");
+    puts("-------------------------------");
+    puts("\n");
+}
+
 
 MU_TEST_SUITE(test_suite)
 {
 	MU_RUN_TEST(test_string_format_is_NULL);
 	MU_RUN_TEST(test_string_format_is_empty);
 	MU_RUN_TEST(test_string_format_is_hello);
-	// MU_RUN_TEST(testing_three_different_strings);
+	MU_RUN_TEST(test_string_with_flagspace_and_1);
 }
 
 int main(void)

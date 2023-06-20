@@ -1,47 +1,32 @@
 #include "ft_printf.h"
-#include <limits.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
 
-
-void	ft_putchar_int(char c)
+int	putnbr_int(int arg, int base)
 {
-	write(1, &c, 1);
-}
-
-int putnbr_int(unsigned int value, int base)
-{
-	int length;
+	int				length;
+	unsigned int	absolute_arg;
 
 	length = 0;
-	if (value < 0)
+	if (arg < 0)
 	{
 		length += write(1, "-", 1);
-		value = (unsigned int)(value * -1);
+		absolute_arg = (unsigned int)(arg * -1);
 	}
 	else
-		value = (unsigned int)value;
-	if (value >= (unsigned int)base)
-		length += putnbr_int((value / base), base);
-	if (value % base < 10)
-		ft_putchar(value % base + '0');
-	else
-		ft_putchar(value % base + 'a' - 10);
+		absolute_arg = (unsigned int)arg;
+	if (absolute_arg >= (unsigned int)base)
+		length += putnbr_int((absolute_arg / base), base);
+	ft_putchar(absolute_arg % base + '0');
 	length++;
 	return (length);
 }
 
-int print_int(int arg)
+int	print_int(int arg, t_flags flags)
 {
-	int index;
+	int	length;
 
-	index = 0;
-	if (arg < 0)
-	{
-		index += write(1, "-", 1);
-		arg *= -1;
-	}
-	index += putnbr_int(arg, 10);
-	return (index);
+	length = 0;
+	if (flags.plus == 1 && arg >= 0)
+		length += write(1, "+", 1);
+	length += putnbr_int(arg, 10);
+	return (length);
 }

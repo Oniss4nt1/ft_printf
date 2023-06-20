@@ -3,23 +3,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 int putnbr_ptr(unsigned long int arg, int base)
 {
 	int length;
 
 	length = 0;
-	if (arg < 0)
-	{
-		length += write(1, "-", 1);
-		arg = (unsigned long int)(arg * -1);
-	}
-	else
-		arg = (unsigned long int)arg;
 	if (arg >= (unsigned long int)base)
 		length += putnbr_ptr((arg / base), base);
 	if (arg % base < 10)
@@ -31,19 +19,19 @@ int putnbr_ptr(unsigned long int arg, int base)
 }
 
 
-int	print_pointer(void *arg, int base)
+int	print_pointer(unsigned long int arg, int base)
 {
-	int	index;
+	int	length;
 
-	index = 0;
+	length = 0;
 	if (!arg)
 	{
-		index += write(1, "(nil)", 5);
-		return (index);
+		length += write(1, "(nil)", 5);
+		return (length);
 	}
-	index += write(1, "0x", 2);
-	index += putnbr_ptr((unsigned long int)arg, base);
-	return (index);
+	length += write(1, "0x", 2);
+	length += putnbr_ptr(arg, base);
+	return (length);
 }
 
 // int main(void)

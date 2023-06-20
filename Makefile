@@ -1,51 +1,67 @@
-# ---------------------------- COLORS ---------------------------- # 
+############################# COLORS ###############################
 
-RED = \033[1;31m
-GREEN = \033[1;32m
-YELLOW = \033[0;33m
-BLUE = \033[0;34m
-RESET = \033[0m
-#MAGENTA = \033[0;35m
+RED		= 		\033[1;31m
+GREEN 	= 		\033[1;32m
+YELLOW 	= 		\033[1;33m
+BLUE 	= 		\033[1;34m
+RESET 	= 		\033[0m
 
-# ---------------------------- LIBRARY ---------------------------- #
+############################# LIBRARY ###############################
 
-NAME = libftprintf.a
+NAME 	= 		libftprintf.a
 
-# --------------------------- MANDATORY --------------------------- #
+############################# MANDATORY #############################
 
-SRCS =	ft_printf.c print_hex_d.c print_char.c print_int.c print_percent.c \
-		print_pointer.c print_string.c print_unsign_int.c
+SRCS 	=		ft_printf.c print_hex_d.c print_char.c \
+				print_int.c print_percent.c print_pointer.c \
+				print_string.c print_unsign_int.c ft_printf_utils.c \
 
-OBJS-MANDATORY = $(addprefix src/, $(SRCS:.c=.o))
+OBJS-SRC = 	$(addprefix src/, $(SRCS:.c=.o))
 
-# ----------------------------- BONUS ----------------------------- #
+############################## BONUS ################################
 
-#SRCS-BONUS = 
+# SRCS-BONUS 	= 	ft_printf_bonus.c print_hex_d_bonus.c print_char_bonus.c \
+# 				print_int_bonus.c print_percent_bonus.c print_pointer_bonus.c \
+# 				print_string_bonus.c print_unsign_int_bonus.c
 
-# -------------------------- COMPILATION -------------------------- #
+# OBJS-BONUS 	= 	$(addprefix bonus/, $(SRCS-BONUS:.c=.o))
 
-FLAGS = -g -Wall -Wextra -Werror
-HEADER = ft_print.h
+############################## FLAGS ################################
 
-# --------------------------- RULES --------------------------- #
+FLAGS 		= 	-Wall -Wextra -Werror
+HEADER 		= 	ft_print.h
+
+############################## RULES ################################
 
 all: $(NAME)
 
-$(NAME): $(OBJS-MANDATORY)
-	@ar rc $(NAME) $(OBJS-MANDATORY)
+$(NAME): $(OBJS-SRC) 
+	@ar rc $(NAME) $(OBJS-SRC)
 	@ranlib $(NAME)
 	@echo "$(GREEN)$(NAME) created $(RESET)"
 
-%.o: %.c $(HEADER)
-	cc $(FLAGS) -c $< -o $@ -I $(HEADER)
+mandatory: $(OBJS-SRC)
+	@ar rc $(NAME) $(OBJS-SRC)
+	@ranlib $(NAME)
+	@echo "$(GREEN)Mandatory from $(NAME) created $(RESET)"
+
+bonus: $(OBJS-SRC)
+	@ar rc $(NAME) $(OBJS-SRC)
+	@ranlib $(NAME)
+	@echo "$(GREEN)Bonus from $(NAME) created $(RESET)"
+
+norm:
+	@echo "$(BLUE)Checking Norminette...$(RESET)"
+	@norminette $(SRCS:%=src/%)
+	@echo "$(BLUE)Norminette done $(RESET)"
 
 clean:
-	@rm -f $(OBJS-MANDATORY)
-	@echo "$(RED)$(NAME) deleted $(RESET)"
+	@rm -f $(OBJS-SRC)
+	@echo "$(RED)Object files deleted $(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED) fclean executed $(RESET)"
+	@echo "$(RED)$(NAME) deleted $(RESET)"
 
 re: fclean all
 

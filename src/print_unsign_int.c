@@ -6,11 +6,17 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:14:03 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/20 11:14:05 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/20 19:06:32 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+/*
+** Print_unsign_int is a function that prints an unsigned integer to the standard
+** output. It is a recursive function that prints the number digit by digit.
+** It returns the number of characters printed.
+*/
 
 int	print_unsign_int(unsigned int arg)
 {

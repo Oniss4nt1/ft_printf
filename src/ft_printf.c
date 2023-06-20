@@ -6,11 +6,58 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:30:09 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/20 16:50:43 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:49:11 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
+
+/* This function is the main function of the ft_printf project. It takes a
+** string as a parameter and prints it to the standard output. It returns the	
+** number of characters printed.
+*/
+
+int	convert_specifiers(const char *format, va_list args, int index);
+
+/*
+** ft_printf is a variadic function, so it takes a variable number of arguments.
+** The first argument is the string to be printed. The rest of the arguments
+** are the values of the specifiers. The function also returns the number of
+** characters printed.
+*/
+
+int	ft_printf(const char *str, ...)
+{
+	va_list	args;
+	int		index;
+	int		specifier_length;
+
+	index = 0;
+	va_start(args, str);
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			specifier_length = get_specifier_length(str);
+			index += convert_specifiers(str, args, index);
+			str += specifier_length;
+		}
+		else
+		{
+			index += write(1, str, 1);
+			str++;
+		}
+	}
+	va_end(args);
+	return (index);
+}
+
+/*
+** This function checks if the character is a valid specifier. If it is, it
+** calls the function that prints the specifier. By the way, it also checks if
+** the specifier hex is uppercase or not and 'activates' the flag.
+*/
 
 int	convert_specifiers(const char *format, va_list args, int index)
 {
@@ -41,28 +88,8 @@ int	convert_specifiers(const char *format, va_list args, int index)
 	return (index);
 }
 
-int	ft_printf(const char *str, ...)
+int main(void)
 {
-	va_list	args;
-	int		index;
-	int		specifier_length;
-
-	index = 0;
-	va_start(args, str);
-	while (*str)
-	{
-		if (*str == '%')
-		{
-			specifier_length = get_specifier_length(str);
-			index += convert_specifiers(str, args, index);
-			str += specifier_length;
-		}
-		else
-		{
-			index += write(1, str, 1);
-			str++;
-		}
-	}
-	va_end(args);
-	return (index);
+	printf("% +d", 12);
+	return (0);
 }

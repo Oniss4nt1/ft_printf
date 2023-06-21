@@ -9,22 +9,63 @@
 
 
 # :information_source: About
-> O projeto do printf é um projeto que visa recriar a função printf da biblioteca padrão do C. A função printf é uma função que permite a impressão de dados na tela, como strings, números, caracteres, etc. Para isso, a função recebe como parâmetro uma string, que pode conter caracteres especiais, que são interpretados pela função, e substituídos pelos valores que são passados como parâmetro. O mandatório é relativamente simples de ser feito, o bônus tem a fama de ser um dos bônus mais difíceis da grade de projetos da 42sp devido aos detalhes que devem ser levados em consideração para que a função funcione corretamente. Mas se conseguir ter tempo para fazer o bônus (ou parte dele), será um bom treino para melhorar sua lógica e habilidades de programação.
+> O projeto do printf é um projeto que visa recriar a função printf da biblioteca padrão do C. A função printf é uma função que permite a impressão de dados na tela, como strings, números, caracteres, etc. Para isso, a função recebe como parâmetro uma string, que pode conter caracteres especiais (especificadores de formatos, para os mais íntimos), que são interpretados pela função, e substituídos pelos valores que são passados como argumentos. O mandatório é relativamente simples de ser feito, o bônus tem a fama de ser um dos bônus mais difíceis da grade de projetos da 42sp devido aos detalhes que devem ser levados em consideração para que a função funcione corretamente. Mas se conseguir ter tempo para fazer o bônus (ou parte dele), será um bom treino para melhorar sua lógica e habilidades de programação.
+
+**Workflow do projeto:**
+- [x] **Parte 1:** Implementar a função printf com os seguintes formatos: cspdiuxX%.
 
 
 # :test_tube: How to use
-> Este repósitorio conta com um Minunit para testar a função. O Minunit que criei compara o output com o do printf original, porém não engloba todas as possibilidades que um formato especificador pode ter, então, caso queira testar com mais formatos ou testes, basta criar novos arquivos ou adicionar MU_TEST nos arquivos já existentes (cheque a seção Minunit para mais informações). No mais, o repositório conta também com um Makefile. Este Makefile foi capado para evitar problemas com a Moulinette, então ele faz o simples: compila mandtórios, compila o bônus, cria o arquivo .a e limpa os arquivos .o. Para usar o Makefile, basta executar o comando abaixo:
+> Este repósitorio conta com um Minunit para testar a função. O Minunit que criei compara o output com o do printf original, porém não engloba todas as possibilidades que um formato especificador pode ter, então, caso queira testar com mais formatos ou testes, basta criar novos arquivos ou adicionar MU_TEST nos arquivos já existentes (cheque a seção Minunit para mais informações). No mais, o repositório conta também com um Makefile. Este Makefile foi capado para evitar problemas com a Moulinette, então ele faz o simples: **compila mandtórios, compila o bônus, cria o arquivo .a e limpa os arquivos .o.** 
+
+Para usar o Makefile, basta executar o comando abaixo:
 
 ```bash
 make
 ```
 
-> Onde <seu_valor> é o valor que você quer que o BUFFER_SIZE tenha. Caso não seja passado nenhum valor, o BUFFER_SIZE será 50.
-Outro ponto, é que o main.c do bônus, irá receber como argumento os arquivos .txt que você quer testar, então, para usa-lo, execute o comando abaixo:
+> Você também pode utilizar o comando make para compilar apenas o mandatório ou o bonus, além de verificar os arquivos com a Norminette. 
+Basta executar os comandos abaixo:
 
 ```bash
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=<seu_valor> get_next_line.c get_next_line_utils.c main_bonus.c && ./a.out <arquivo1.txt> <arquivo2.txt> <arquivo3.txt>
+make mandatory
 ```
+
+```bash
+make bonus
+```
+
+```bash
+make norm
+```
+
+# :gear: Minunit - TDD
+> Esse Minunit segue um template que eu fiz anteriormente, o link dele está abaixo:
+
+Ele é composto por arquivos de teste e um Makefile. Esse Makefile é diferente do que foi feito para o printf, para realizar o teste, ele precisa de três caminhos: o arquivo na pasta src, o diretório do arquivo de teste e o header do projeto em questão, o ft_printf. Ao dar o make, ele irá compilar o arquivo da pasta src e o arquivo do tests juntos, gerando um arquivo executável. Depois basta rodar esse arquivo executável para realizar o teste.
+
+Os comandos para usar a Minunit são:
+
+```bash
+make <nome do arquivo de teste sem .c >
+```
+> Este comando gera o arquivo executável com o nome do arquivo de teste.
+
+```bash
+make <./nome do arquivo executável >
+```
+> Este comando executa o arquivo executável, realizando o teste.
+
+```bash
+make leak
+```
+> Make leak irá rodar o executável com o valgrind, para verificar se há vazamentos de memória.
+
+```bash
+make clean
+```
+
+> Futuramente pretendo aperfeiçoar meu Minunit e trazer novas funcionalidades para o Makefile usado, consultem o repositorio do Minunit para mais informações ou para usar novas versões.
 
 
 # :building_construction: Development

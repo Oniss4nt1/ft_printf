@@ -21,8 +21,8 @@ MU_TEST(test_int_have_2_as_field_width)
     if (expected != result) 
     {
         printf("\nStrings differ:\n");
-        printf("Expected: %X\n", 0);
-        ft_printf("Result: %X\n", 0);
+        printf("Expected: %d\n", 42);
+        ft_printf("Result: %d\n", 42);
     }
     mu_assert(expected == result, "error, strings differ");
 
@@ -52,8 +52,8 @@ MU_TEST(test_int_have_2_as_field_width_and_minus)
     if (expected != result) 
     {
         printf("\nStrings differ:\n");
-        printf("Expected: %X\n", 0);
-        ft_printf("Result: %X\n", 0);
+        printf("Expected: %d\n", 0);
+        ft_printf("Result: %d\n", 0);
     }
     mu_assert(expected == result, "error, strings differ");
 }

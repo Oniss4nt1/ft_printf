@@ -47,7 +47,7 @@ make norm
 
 > Ele é composto por arquivos de teste e um Makefile. Esse Makefile é diferente do que foi feito para o printf, para realizar o teste, ele precisa de três caminhos: o arquivo na pasta src, o diretório do arquivo de teste e o header do projeto em questão, o ft_printf. Ao dar o make, ele irá compilar o arquivo da pasta src e o arquivo do tests juntos, gerando um arquivo executável. Depois basta rodar esse arquivo executável para realizar o teste.
 
-Os comandos para usar a Minunit são:
+> Os comandos para usar a Minunit são:
 
 ```bash
 make <nome_do_arquivo_de_teste_sem.c >

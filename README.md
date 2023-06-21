@@ -13,7 +13,7 @@
 
 **Workflow do projeto:**
 > Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Você pode conferir o meu fluxograma lá no Miro no link abaixo:
-![Workflow do projeto](https://miro.com/app/board/uXjVMAtpUSo=/?moveToWidget=3458764557690236367&cot=14)
+![Workflow do projeto](/img/ft_printf_workflow.png)
 
 
 # :test_tube: How to use

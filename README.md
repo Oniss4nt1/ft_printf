@@ -14,7 +14,7 @@
 **Workflow do projeto:**
 > Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Abaixo a imagem desse querido:
 
-// Para adicionar imagens no markdown basta usar o seguinte código:
+Para adicionar imagens no markdown basta usar o seguinte código:
 ![alt text]https://imgur.com/gallery/LXvUSd2
 
 # :test_tube: How to use

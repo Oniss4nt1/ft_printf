@@ -18,7 +18,7 @@
 # :test_tube: How to use
 > Este repósitorio conta com um Minunit para testar a função. O Minunit que criei compara o output com o do printf original, porém não engloba todas as possibilidades que um formato especificador pode ter, então, caso queira testar com mais formatos ou testes, basta criar novos arquivos ou adicionar MU_TEST nos arquivos já existentes (cheque a seção Minunit para mais informações). No mais, o repositório conta também com um Makefile. Este Makefile foi capado para evitar problemas com a Moulinette, então ele faz o simples: **compila mandtórios, compila o bônus, cria o arquivo .a e limpa os arquivos .o.** 
 
-Para usar o Makefile, basta executar o comando abaixo:
+> Para usar o Makefile, basta executar o comando abaixo:
 
 
 ```bash
@@ -48,12 +48,12 @@ Ele é composto por arquivos de teste e um Makefile. Esse Makefile é diferente 
 Os comandos para usar a Minunit são:
 
 ```bash
-make <nome do arquivo de teste sem .c >
+make <nome_do_arquivo_de_teste_sem_.c >
 ```
 > Este comando gera o arquivo executável com o nome do arquivo de teste.
 
 ```bash
-make <./nome do arquivo executável >
+make <./nome_do_arquivo_executável >
 ```
 > Este comando executa o arquivo executável, realizando o teste.
 

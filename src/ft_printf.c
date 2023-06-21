@@ -6,7 +6,7 @@
 /*   By: brunrodr <brunrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 10:30:09 by brunrodr          #+#    #+#             */
-/*   Updated: 2023/06/21 15:54:10 by brunrodr         ###   ########.fr       */
+/*   Updated: 2023/06/21 16:31:24 by brunrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,15 +81,9 @@ int	convert_specifiers(const char *format, va_list args, int index)
 		else if (*format == 'd' || *format == 'i')
 			index += print_int(va_arg(args, int), flags);
 		else if (*format == 'x' || *format == 'X')
-			index += print_hex_d(va_arg(args, unsigned long int), upper, flags);
+			index += print_hex_d(va_arg(args, unsigned int), upper, flags);
 		else if (*format == '%')
 			index += print_percent();
 	}
 	return (index);
-}
-
-int main(void)
-{
-	printf("% +d", 12);
-	return (0);
 }

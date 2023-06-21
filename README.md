@@ -1,5 +1,5 @@
 <div align="center" >
-  <img src="https://game.42sp.org.br/static/assets/achievements/get_next_linem.png" alt="Ft_printf" width="175" height="175">
+  <img src="https://game.42sp.org.br/static/assets/achievements/ft_printfm.png" alt="Ft_printf" width="175" height="175">
   <h1><i>Fase 1</h1></i>
 
 </div>

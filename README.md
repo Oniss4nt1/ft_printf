@@ -12,7 +12,8 @@
 > O projeto do printf é um projeto que visa recriar a função printf da biblioteca padrão do C. A função printf é uma função que permite a impressão de dados na tela, como strings, números, caracteres, etc. Para isso, a função recebe como parâmetro uma string, que pode conter caracteres especiais (especificadores de formatos, para os mais íntimos), que são interpretados pela função, e substituídos pelos valores que são passados como argumentos. O mandatório é relativamente simples de ser feito, o bônus tem a fama de ser um dos bônus mais difíceis da grade de projetos da 42sp devido aos detalhes que devem ser levados em consideração para que a função funcione corretamente. Mas se conseguir ter tempo para fazer o bônus (ou parte dele), será um bom treino para melhorar sua lógica e habilidades de programação.
 
 **Workflow do projeto:**
-> Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Abaixo a imagem desse querido:
+> Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Você pode conferir o meu fluxograma lá no Miro no link abaixo:
+![Workflow do projeto](https://miro.com/app/board/uXjVMAtpUSo=/?moveToWidget=3458764557690236367&cot=14)
 
 
 # :test_tube: How to use
@@ -48,7 +49,7 @@ Ele é composto por arquivos de teste e um Makefile. Esse Makefile é diferente 
 Os comandos para usar a Minunit são:
 
 ```bash
-make <nome_do_arquivo_de_teste_sem_.c >
+make <nome_do_arquivo_de_teste_sem.c >
 ```
 > Este comando gera o arquivo executável com o nome do arquivo de teste.
 

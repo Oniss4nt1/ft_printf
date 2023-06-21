@@ -14,7 +14,7 @@
 **Workflow do projeto:**
 > Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Abaixo a imagem desse querido:
 
-![alt text]https://imgur.com/gallery/LXvUSd2
+![Workflow do projeto](https://i.imgur.com/LXvUSd2.jpg)
 
 # :test_tube: How to use
 > Este repósitorio conta com um Minunit para testar a função. O Minunit que criei compara o output com o do printf original, porém não engloba todas as possibilidades que um formato especificador pode ter, então, caso queira testar com mais formatos ou testes, basta criar novos arquivos ou adicionar MU_TEST nos arquivos já existentes (cheque a seção Minunit para mais informações). No mais, o repositório conta também com um Makefile. Este Makefile foi capado para evitar problemas com a Moulinette, então ele faz o simples: **compila mandtórios, compila o bônus, cria o arquivo .a e limpa os arquivos .o.** 

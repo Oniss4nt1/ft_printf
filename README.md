@@ -12,9 +12,9 @@
 > O projeto do printf é um projeto que visa recriar a função printf da biblioteca padrão do C. A função printf é uma função que permite a impressão de dados na tela, como strings, números, caracteres, etc. Para isso, a função recebe como parâmetro uma string, que pode conter caracteres especiais (especificadores de formatos, para os mais íntimos), que são interpretados pela função, e substituídos pelos valores que são passados como argumentos. O mandatório é relativamente simples de ser feito, o bônus tem a fama de ser um dos bônus mais difíceis da grade de projetos da 42sp devido aos detalhes que devem ser levados em consideração para que a função funcione corretamente. Mas se conseguir ter tempo para fazer o bônus (ou parte dele), será um bom treino para melhorar sua lógica e habilidades de programação.
 
 **Workflow do projeto:**
-> Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Você pode conferir o meu fluxograma lá no Miro no link abaixo:
+> Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! O fluxograma que segui foi esse:
 
-<img src="./img/ft_printf_workflow.jpg" alt="Workflow do Projeto" style="width:1200px;">
+<img src="./img/ft_printf_workflow.jpg" alt="Workflow do Projeto" style="width:1000px;">
 
 
 # :test_tube: How to use

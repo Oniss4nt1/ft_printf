@@ -14,7 +14,6 @@
 **Workflow do projeto:**
 > Desta vez eu decidi criar o meu próprio workflow do projeto lá no Miro, ele é muito útil para fazer a gestão do projeto e para ter uma visão geral do que precisa ser feito, quem sabe ele pode ser útil para você também! Abaixo a imagem desse querido:
 
-![Workflow do projeto](https://imgur.com/gallery/LXvUSd2)
 
 # :test_tube: How to use
 > Este repósitorio conta com um Minunit para testar a função. O Minunit que criei compara o output com o do printf original, porém não engloba todas as possibilidades que um formato especificador pode ter, então, caso queira testar com mais formatos ou testes, basta criar novos arquivos ou adicionar MU_TEST nos arquivos já existentes (cheque a seção Minunit para mais informações). No mais, o repositório conta também com um Makefile. Este Makefile foi capado para evitar problemas com a Moulinette, então ele faz o simples: **compila mandtórios, compila o bônus, cria o arquivo .a e limpa os arquivos .o.** 
@@ -71,4 +70,4 @@ make clean
 
 
 # :building_construction: Development
-> Meu projeto foi desenvolvido com cadeia de arrays, pois tive dificuldade em implementar com lista encadeada. Além de fazer com cadeia de arrays, quis fazer exclusivamente com ponteiros, para treinar a síntaxe e entender melhor como funciona a manipulação de ponteiros em C. Foi bem desafiador, principalmente para evitar que vazamentos ocorressem por perda de referência.
+> Meu projeto foi desenvolvido do jeito oposto que o subject pede. Lá ele recomenda que comece pelo bônus (se for fazer) e daí cria o mandatório. Porém, seguindo conselhos de cadetes veteranos, fiz primeiro o mandatório, deixei ele separado e aí passei a ajustar a lógica do código para adaptar ao bônus. Outro ponto, o bônus é simples, mas tem muuuuuita verificação, principalmente para algumas flags. Então vai de você se tiver tempo e paciência em ter que verificar tudo, mas se quiser fazer o bônus, recomendo que faça o mandatório primeiro e depois adapte para o bônus.
